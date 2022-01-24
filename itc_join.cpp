@@ -4,11 +4,13 @@ string str = "";
 if (lst.size() > 0){
 
     
-     for(int i = 0; i <= lst.size() - 1; i++){
+     for(int i = 0; i < lst.size() - 1; i++){
         str += lst[i];
-        if (i != lst.size() - 1)
-            str += sep;
+        str += sep;
      }
+
+str += lst[lst.size() - 1];
+
 }
      return str;
  }
