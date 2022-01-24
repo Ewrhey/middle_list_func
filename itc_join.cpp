@@ -2,13 +2,13 @@
 #include "middle_list.h"
 
 string itc_join(vector <char> lst, string sep){
-    string new_str = "";
+    string itog = "";
     if (lst.size() > 0){
     for(int i = 0; i < (lst.size() - 1); i++){
-        new_str += lst[i];
-        new_str += sep;
+        itog += lst[i];
+        itog += sep;
     }
-    new_str += lst[lst.size() - 1];
+    itog += lst[lst.size() - 1];
     }
-    return new_str;
+    return itog;
 }
