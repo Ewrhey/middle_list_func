@@ -1,22 +1,18 @@
 #include "middle_list.h"
 
 long long itc_len(string str){
-    long long kol = 0, i = 0;
+    long long counter = 0, i = 0;
     while (str[i] != '\0'){
-        kol++;
+        counter++;
         i++;
     }
-   return kol;
+   return counter;
 }
 
 
-int itc_find_str(string str1, char str2){
-    long long len1 = 0;
-    len1 =  itc_len(str1);
-    long long len2 = 0;
-    long long kol = 0;
-    for (long long i = 0; i < len1; i++){
-        kol = 0;
+
+int itc_find_str(string str1, char str2){ 
+    for (long long i = 0; i < itc_len(str1);i++){
         if (str1[i] == str2){
             return i;
         }
@@ -24,27 +20,24 @@ int itc_find_str(string str1, char str2){
     return -1;
 }
 
-#include "middle_list.h"
-
 string itc_slice_str(string str, int start, int finish){
-    long long len = itc_len(str);
-    string new_str = "";
-    if (finish >= len){
-        for (long long i = start; i < len; i++){
-            new_str += str[i];
+    string itog = "";
+    if (finish >= itc_len(str)){
+        for (long long i = start; i < itc_len(str); i++){
+            itog += str[i];
         }
     }
-   else if (start >= len){
+   else if (start >= itc_len(str)){
         return str;
     }
-    else if (start == (len - 1)){
-        return new_str += str[len - 1];
+    else if (start == (itc_len(str) - 1)){
+        return itog += str[itc_len(str) - 1];
     }
     else{
         for (long long i = start; i <= finish; i++){
-            new_str += str[i];
+            itog += str[i];
         }
     }
-    return new_str;
+    return itog;
 return "-1";
 }
